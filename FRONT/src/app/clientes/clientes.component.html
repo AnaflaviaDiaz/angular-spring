@@ -2,6 +2,11 @@
   <div class="card-header">Clientes</div>
   <div class="card-body text-secondary">
     <h5 class="card-title">Lista de cliente</h5>
+
+    <div class="my-2 text-left">
+      <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/clientes/form']" routerLinkActive="router-link-active" >Crear cliente</button>
+    </div>
+
     <table class="table">
       <thead>
         <tr>
@@ -24,3 +29,5 @@
     </table>
   </div>
 </div>
+
+<!-- <app-form></app-form> -->
