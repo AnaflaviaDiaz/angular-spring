@@ -1,7 +1,7 @@
 <div class="card bg-dark text-white">
   <div class="card-header"> {{ title }} </div>
   <div class="card-body">
-    <form [formGroup]="clienteForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="clienteForm">
 
       <div class="form-group row">
         <label for="name" class="col-from-label col-sm-2">NAME</label>
@@ -26,7 +26,10 @@
 
       <div class="form-group row">
         <div class="col-sm-6">
-          <button class="btn btn-primary" role="button" [disabled]="!clienteForm.valid">Submit</button>
+          <button class="btn btn-primary" role="button" [disabled]="!clienteForm.valid" (click)="create()" *ngIf="!idClient else elseBlock">Crear</button>
+          <ng-template #elseBlock>
+            <button class="btn btn-primary" role="button" (click)="update()">Update</button>
+          </ng-template>
         </div>
       </div>
 
